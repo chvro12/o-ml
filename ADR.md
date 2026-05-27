@@ -45,6 +45,17 @@ services HTTP utilisent deux workers Gunicorn pour absorber les appels
 concurrents ; le monitoring reste a un worker afin de ne pas fragmenter son
 historique en memoire.
 
+L'artefact commun aux deux predictions mesure `5.01 MiB`. Les deux workers de
+l'inference en chargent chacun une copie, soit environ `10 MiB` de poids et de
+vocabulaire serialises, avant les structures Python, scikit-learn et les
+matrices crees pendant les appels concurrents. La reservation `512Mi` et la
+limite `1024Mi` laissent donc une marge volontaire pour l'execution et les
+pointes de requetes. Le preprocessing ne charge pas de modele et ne conserve
+pas de corpus ; `128Mi / 192Mi` couvrent ses deux workers et les appels HTTP.
+Le monitoring ne conserve que des compteurs et les 100 dernieres predictions ;
+`96Mi / 160Mi` sont alloues a son worker unique. Ces estimations doivent etre
+confirmees par `kubectl top pods` lors de l'execution Kubernetes.
+
 | Service actif | Requests CPU | Requests memoire | Limits CPU | Limits memoire |
 | --- | ---: | ---: | ---: | ---: |
 | Preprocessing et entree publique | 200m | 128Mi | 500m | 192Mi |
@@ -54,13 +65,14 @@ historique en memoire.
 | Quota cas 2 | **3000m** | **2048Mi** | **3000m** | **2048Mi** |
 | Marge nominale | **1900m** | **1312Mi** | **800m** | **672Mi** |
 
-Les valeurs sont des allocations initiales fondees sur la taille du modele et
-doivent etre confrontees a `kubectl top pods` pendant le challenge. Un
-RollingUpdate de l'inference avec un pod supplementaire consommerait en limits
-`3700m / 2400Mi`, au-dessus du quota. L'inference utilise donc `Recreate`. Le
-preprocessing peut utiliser `RollingUpdate` car sa pointe atteint
-`2700m / 1568Mi`, et le monitoring aussi car sa pointe atteint
-`2400m / 1536Mi`, toutes deux sous le quota.
+Les requests nominales sont `1100m / 736Mi`, sous le quota `3000m / 2048Mi`.
+Lors d'un surge d'un pod, le preprocessing atteindrait en requests
+`1300m / 864Mi`, et le monitoring `1200m / 832Mi`, toujours sous le quota.
+Leurs pointes en limits restent egalement admissibles, respectivement
+`2700m / 1568Mi` et `2400m / 1536Mi` : ils utilisent `RollingUpdate`.
+En revanche, un pod d'inference supplementaire atteindrait, en limits,
+`3700m / 2400Mi`, au-dessus du quota, meme si ses requests (`1900m / 1248Mi`)
+resteraient admissibles. L'inference utilise donc `Recreate`.
 
 ## Livraison
 
