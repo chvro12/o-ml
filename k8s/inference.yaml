@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference
+  namespace: projet-pst
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: inference
+  template:
+    metadata:
+      labels:
+        app: inference
+    spec:
+      containers:
+        - name: inference
+          image: tp-text-inference:1.0.0
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: TOXIC_THRESHOLD
+              value: "0.35"
+            - name: CATEGORY_THRESHOLD
+              value: "0.35"
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+          resources:
+            requests:
+              cpu: "800m"
+              memory: "512Mi"
+            limits:
+              cpu: "1500m"
+              memory: "1024Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: model-svc
+  namespace: projet-pst
+spec:
+  selector:
+    app: inference
+  ports:
+    - port: 8000
+      targetPort: 8000

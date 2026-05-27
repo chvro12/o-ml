@@ -1,0 +1,10 @@
+{
+  "dataset_rows": 159571,
+  "toxic_rate_pct": 10.17,
+  "binary_roc_auc": 0.9727,
+  "binary_f1_threshold_035": 0.6773,
+  "categories_macro_f1_threshold_035": 0.5063,
+  "artifact_bytes": 5250124,
+  "vocabulary_size": 80000,
+  "random_state": 42
+}

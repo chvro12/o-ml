@@ -1,0 +1,31 @@
+services:
+  preprocessing:
+    build:
+      context: .
+      dockerfile: services/preprocessing/Dockerfile
+    ports:
+      - "8000:8001"
+    environment:
+      INFERENCE_URL: http://inference:8000
+      MONITORING_URL: http://monitoring:8002
+    depends_on:
+      - inference
+      - monitoring
+    restart: unless-stopped
+
+  monitoring:
+    build:
+      context: .
+      dockerfile: services/monitoring/Dockerfile
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
+
+  inference:
+    build:
+      context: .
+      dockerfile: services/inference/Dockerfile
+    environment:
+      TOXIC_THRESHOLD: "0.35"
+      CATEGORY_THRESHOLD: "0.35"
+    restart: unless-stopped

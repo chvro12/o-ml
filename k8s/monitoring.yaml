@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitoring
+  namespace: projet-pst
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: monitoring
+  template:
+    metadata:
+      labels:
+        app: monitoring
+    spec:
+      containers:
+        - name: monitoring
+          image: tp-text-monitoring:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8002
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8002
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8002
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "96Mi"
+            limits:
+              cpu: "200m"
+              memory: "160Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: monitoring-svc
+  namespace: projet-pst
+spec:
+  selector:
+    app: monitoring
+  ports:
+    - port: 8002
+      targetPort: 8002
