@@ -11,15 +11,16 @@ python scripts/load_test.py --case text --level stress --url "$URL"
 
 Pendant `charge` et `stress`, `scripts/run_challenge.sh "$URL"` enregistre les
 sorties de charge, les metriques du monitoring, les predictions et
-`kubectl top pods` toutes les 30 secondes.
+`kubectl top pods` toutes les 30 secondes dans un dossier date
+`evidence/YYYYMMDD-HHMMSS/`.
 
 ## Mesures obligatoires
 
 | Niveau | Rate req/min | Requetes | HTTP 200 | Succes | Latence moyenne | P95 | Restarts | Preuve |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Nominal | 10 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/nominal-*` |
-| Charge | 50 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/charge-*` |
-| Stress | 150 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/stress-*` |
+| Nominal | 10 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/nominal-*` |
+| Charge | 50 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/charge-*` |
+| Stress | 150 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/stress-*` |
 
 ## Correction avant et apres
 

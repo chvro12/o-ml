@@ -83,7 +83,7 @@ couverture de `80 %`. Le job d'images ne peut s'executer qu'apres son succes ;
 il construit toujours les trois images et les pousse lorsque les secrets Docker
 Hub sont configures.
 
-Le script `scripts/deploy_minikube.sh` construit les images depuis un clone,
-applique tous les manifests sous `k8s/` et attend les trois deployments. Il
-evite toute intervention manuelle ou dependance a un etat Docker preexistant
-sur la machine de demonstration.
+Le script `scripts/deploy_minikube.sh` demarre Minikube, tire les images
+versionnees depuis Docker Hub, applique tous les manifests sous `k8s/` et
+attend les trois deployments. Il evite toute intervention manuelle et ne depend
+pas d'un build Docker local avant la demonstration.

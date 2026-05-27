@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: preprocessing
-          image: tp-text-preprocessing:1.0.0
+          image: sambathiam/tp-text-preprocessing:1.0.0
           imagePullPolicy: IfNotPresent
           env:
             - name: INFERENCE_URL

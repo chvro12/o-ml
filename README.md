@@ -15,10 +15,11 @@ cd tp-text
 ./scripts/deploy_minikube.sh
 ```
 
-Cette commande démarre Minikube, construit les trois images depuis le clone,
-applique l'ensemble des manifests et attend les déploiements. L'URL publique
-porte le nom attendu par le script de charge et dirige les commentaires bruts
-vers le preprocessing, qui les transmet ensuite au modèle interne :
+Cette commande démarre Minikube, tire les trois images versionnées depuis
+Docker Hub, applique l'ensemble des manifests et attend les déploiements.
+L'URL publique porte le nom attendu par le script de charge et dirige les
+commentaires bruts vers le preprocessing, qui les transmet ensuite au modèle
+interne :
 
 ```bash
 kubectl get all -n projet-pst
@@ -102,6 +103,12 @@ le statut HTTP et la prédiction auprès de `monitoring-svc`.
 | `inference-svc` / preprocessing | 8000 | Entrée publique, préparation et télémétrie |
 | `model-svc` / inference | 8000 | TF-IDF, toxicité et catégories fines |
 | `monitoring-svc` | 8002 | Requêtes, prédictions, latence et erreurs |
+
+Les images Kubernetes utilisées sont :
+
+- `sambathiam/tp-text-preprocessing:1.0.0`
+- `sambathiam/tp-text-monitoring:1.0.0`
+- `sambathiam/tp-text-inference:1.0.0`
 
 Les choix techniques et les calculs de ressources sont justifiés dans
 [ADR.md](ADR.md).

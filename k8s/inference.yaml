@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: inference
-          image: tp-text-inference:1.0.0
+          image: sambathiam/tp-text-inference:1.0.0
           imagePullPolicy: IfNotPresent
           env:
             - name: TOXIC_THRESHOLD
