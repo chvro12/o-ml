@@ -61,3 +61,9 @@ def test_publish_metric_does_not_break_prediction(monkeypatch):
 
 def test_health_endpoint():
     assert client.get("/health").json() == {"status": "ok"}
+
+
+def test_frontend_is_served():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "Tester le modele de toxicite" in response.text

@@ -3,17 +3,27 @@ from __future__ import annotations
 import os
 import re
 import time
+from pathlib import Path
 from typing import Any
 
 import httpx
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 
 INFERENCE_URL = os.getenv("INFERENCE_URL", "http://model:8000")
 MONITORING_URL = os.getenv("MONITORING_URL", "http://monitoring:8002")
 MAX_TEXT_LENGTH = int(os.getenv("MAX_TEXT_LENGTH", "20000"))
+STATIC_DIR = Path(__file__).resolve().parent / "static"
 
 app = FastAPI(title="Text preprocessing service", version="1.0.0")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def frontend() -> FileResponse:
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 def prepare_text(raw: dict[str, Any]) -> str:

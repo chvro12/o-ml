@@ -60,6 +60,7 @@ Les résultats observés doivent être consignés dans [STRESS_TEST.md](STRESS_T
 
 ```bash
 docker compose up --build -d
+open http://127.0.0.1:8000
 curl -X POST http://127.0.0.1:8000/predict \
   -H 'Content-Type: application/json' \
   -d '{"text":"You are a hateful and disgusting idiot."}'
