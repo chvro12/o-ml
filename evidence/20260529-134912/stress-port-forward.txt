@@ -1,0 +1,35 @@
+Forwarding from 127.0.0.1:18002 -> 8002
+Forwarding from [::1]:18002 -> 8002
+Handling connection for 18002
+I0529 14:05:30.465020   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfcc02960) Create stream
+I0529 14:05:30.465546   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfcc02960) Stream added, broadcasting: 1
+I0529 14:05:30.475213   35519 log.go:244] (0x4a2dfc569130) Reply frame received for 1
+I0529 14:05:30.475244   35519 log.go:244] (0x4a2dfcc02960) (1) Writing data frame
+I0529 14:05:30.475272   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca78000) Create stream
+I0529 14:05:30.475279   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca78000) Stream added, broadcasting: 3
+I0529 14:05:30.476841   35519 log.go:244] (0x4a2dfc569130) Reply frame received for 3
+I0529 14:05:30.476955   35519 log.go:244] (0x4a2dfca78000) (3) Writing data frame
+I0529 14:05:30.482978   35519 log.go:244] (0x4a2dfc569130) Data frame received for 3
+I0529 14:05:30.482993   35519 log.go:244] (0x4a2dfca78000) (3) Data frame handling
+I0529 14:05:30.483001   35519 log.go:244] (0x4a2dfca78000) (3) Data frame sent
+I0529 14:05:30.483240   35519 log.go:244] (0x4a2dfca78000) (3) Writing data frame
+I0529 14:05:30.484375   35519 log.go:244] (0x4a2dfc569130) Data frame received for 3
+I0529 14:05:30.484386   35519 log.go:244] (0x4a2dfca78000) (3) Data frame handling
+I0529 14:05:30.484398   35519 log.go:244] (0x4a2dfc569130) Data frame received for 1
+I0529 14:05:30.484412   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca78000) Stream removed, broadcasting: 3
+I0529 14:05:30.484421   35519 log.go:244] (0x4a2dfcc02960) (1) Data frame handling
+I0529 14:05:30.484441   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca78000) Stream removed, broadcasting: 3
+I0529 14:05:30.484470   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfcc02960) Stream removed, broadcasting: 1
+Handling connection for 18002
+I0529 14:05:30.492109   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfcba2000) Create stream
+I0529 14:05:30.492119   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfcba2000) Stream added, broadcasting: 5
+I0529 14:05:30.492902   35519 log.go:244] (0x4a2dfc569130) Reply frame received for 5
+I0529 14:05:30.492919   35519 log.go:244] (0x4a2dfcba2000) (5) Writing data frame
+I0529 14:05:30.492945   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca780a0) Create stream
+I0529 14:05:30.492952   35519 log.go:244] (0x4a2dfc569130) (0x4a2dfca780a0) Stream added, broadcasting: 7
+I0529 14:05:30.493608   35519 log.go:244] (0x4a2dfc569130) Reply frame received for 7
+I0529 14:05:30.493643   35519 log.go:244] (0x4a2dfca780a0) (7) Writing data frame
+I0529 14:05:30.497969   35519 log.go:244] (0x4a2dfc569130) Data frame received for 7
+I0529 14:05:30.497982   35519 log.go:244] (0x4a2dfca780a0) (7) Data frame handling
+I0529 14:05:30.497988   35519 log.go:244] (0x4a2dfca780a0) (7) Data frame sent
+I0529 14:05:30.498181   35519 log.go:244] (0x4a2dfca780a0) (7) Writing data frame

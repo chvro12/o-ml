@@ -1,0 +1,12 @@
+# HELP inference_requests_total Total inference requests observed.
+# TYPE inference_requests_total counter
+inference_requests_total 1048
+# HELP inference_errors_total Requests returning an error.
+# TYPE inference_errors_total counter
+inference_errors_total 0
+# HELP inference_latency_seconds_avg Average end-to-end latency.
+# TYPE inference_latency_seconds_avg gauge
+inference_latency_seconds_avg 0.017183
+# HELP inference_latency_seconds_max Maximum end-to-end latency.
+# TYPE inference_latency_seconds_max gauge
+inference_latency_seconds_max 0.130802

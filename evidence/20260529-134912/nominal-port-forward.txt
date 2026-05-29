@@ -1,0 +1,38 @@
+Forwarding from 127.0.0.1:18002 -> 8002
+Forwarding from [::1]:18002 -> 8002
+Handling connection for 18002
+I0529 13:55:21.276449   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b06320) Create stream
+I0529 13:55:21.277013   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b06320) Stream added, broadcasting: 1
+I0529 13:55:21.281615   34062 log.go:244] (0x2451a54a0a50) Reply frame received for 1
+I0529 13:55:21.281645   34062 log.go:244] (0x2451a5b06320) (1) Writing data frame
+I0529 13:55:21.281685   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b063c0) Create stream
+I0529 13:55:21.281695   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b063c0) Stream added, broadcasting: 3
+I0529 13:55:21.282877   34062 log.go:244] (0x2451a54a0a50) Reply frame received for 3
+I0529 13:55:21.283467   34062 log.go:244] (0x2451a5b063c0) (3) Writing data frame
+I0529 13:55:21.297369   34062 log.go:244] (0x2451a54a0a50) Data frame received for 3
+I0529 13:55:21.297441   34062 log.go:244] (0x2451a5b063c0) (3) Data frame handling
+I0529 13:55:21.297456   34062 log.go:244] (0x2451a5b063c0) (3) Data frame sent
+I0529 13:55:21.297463   34062 log.go:244] (0x2451a54a0a50) Data frame received for 3
+I0529 13:55:21.297469   34062 log.go:244] (0x2451a5b063c0) (3) Data frame handling
+I0529 13:55:21.297476   34062 log.go:244] (0x2451a5b063c0) (3) Data frame sent
+I0529 13:55:21.297681   34062 log.go:244] (0x2451a5b063c0) (3) Writing data frame
+I0529 13:55:21.299085   34062 log.go:244] (0x2451a54a0a50) Data frame received for 3
+I0529 13:55:21.299098   34062 log.go:244] (0x2451a5b063c0) (3) Data frame handling
+I0529 13:55:21.299112   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b063c0) Stream removed, broadcasting: 3
+I0529 13:55:21.299123   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b063c0) Stream removed, broadcasting: 3
+I0529 13:55:21.299132   34062 log.go:244] (0x2451a54a0a50) Data frame received for 1
+I0529 13:55:21.299149   34062 log.go:244] (0x2451a5b06320) (1) Data frame handling
+I0529 13:55:21.299160   34062 log.go:244] (0x2451a54a0a50) (0x2451a5b06320) Stream removed, broadcasting: 1
+Handling connection for 18002
+I0529 13:55:21.306372   34062 log.go:244] (0x2451a54a0a50) (0x2451a594e0a0) Create stream
+I0529 13:55:21.306382   34062 log.go:244] (0x2451a54a0a50) (0x2451a594e0a0) Stream added, broadcasting: 5
+I0529 13:55:21.307120   34062 log.go:244] (0x2451a54a0a50) Reply frame received for 5
+I0529 13:55:21.307135   34062 log.go:244] (0x2451a594e0a0) (5) Writing data frame
+I0529 13:55:21.307162   34062 log.go:244] (0x2451a54a0a50) (0x2451a584c000) Create stream
+I0529 13:55:21.307169   34062 log.go:244] (0x2451a54a0a50) (0x2451a584c000) Stream added, broadcasting: 7
+I0529 13:55:21.307734   34062 log.go:244] (0x2451a54a0a50) Reply frame received for 7
+I0529 13:55:21.307760   34062 log.go:244] (0x2451a584c000) (7) Writing data frame
+I0529 13:55:21.311755   34062 log.go:244] (0x2451a54a0a50) Data frame received for 7
+I0529 13:55:21.311770   34062 log.go:244] (0x2451a584c000) (7) Data frame handling
+I0529 13:55:21.311776   34062 log.go:244] (0x2451a584c000) (7) Data frame sent
+I0529 13:55:21.311911   34062 log.go:244] (0x2451a584c000) (7) Writing data frame

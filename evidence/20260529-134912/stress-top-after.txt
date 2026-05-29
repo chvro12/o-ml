@@ -1,0 +1,4 @@
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       14m          253Mi           
+monitoring-86d4d45d8d-9n4xf      6m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   51m          131Mi           

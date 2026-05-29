@@ -1,0 +1,19 @@
+NAME                                 READY   STATUS    RESTARTS   AGE
+pod/inference-5d8c5bf886-s6zkt       1/1     Running   0          8m34s
+pod/monitoring-86d4d45d8d-9n4xf      1/1     Running   0          8m34s
+pod/preprocessing-8459c9f5ff-2mfcw   1/1     Running   0          8m34s
+
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/inference-svc    NodePort    10.111.86.87    <none>        8000:31314/TCP   8m34s
+service/model-svc        ClusterIP   10.98.192.242   <none>        8000/TCP         8m34s
+service/monitoring-svc   ClusterIP   10.99.220.226   <none>        8002/TCP         8m34s
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/inference       1/1     1            1           8m34s
+deployment.apps/monitoring      1/1     1            1           8m34s
+deployment.apps/preprocessing   1/1     1            1           8m34s
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/inference-5d8c5bf886       1         1         1       8m34s
+replicaset.apps/monitoring-86d4d45d8d      1         1         1       8m34s
+replicaset.apps/preprocessing-8459c9f5ff   1         1         1       8m34s

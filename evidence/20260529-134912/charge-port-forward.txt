@@ -1,0 +1,35 @@
+Forwarding from 127.0.0.1:18002 -> 8002
+Forwarding from [::1]:18002 -> 8002
+Handling connection for 18002
+I0529 14:00:25.828675   34764 log.go:244] (0x78eebf0e6e0) (0x78eebe78a00) Create stream
+I0529 14:00:25.832803   34764 log.go:244] (0x78eebf0e6e0) (0x78eebe78a00) Stream added, broadcasting: 1
+I0529 14:00:25.839937   34764 log.go:244] (0x78eebf0e6e0) Reply frame received for 1
+I0529 14:00:25.839965   34764 log.go:244] (0x78eebe78a00) (1) Writing data frame
+I0529 14:00:25.839997   34764 log.go:244] (0x78eebf0e6e0) (0x78eec6ce640) Create stream
+I0529 14:00:25.840006   34764 log.go:244] (0x78eebf0e6e0) (0x78eec6ce640) Stream added, broadcasting: 3
+I0529 14:00:25.840766   34764 log.go:244] (0x78eebf0e6e0) Reply frame received for 3
+I0529 14:00:25.840799   34764 log.go:244] (0x78eec6ce640) (3) Writing data frame
+I0529 14:00:25.850050   34764 log.go:244] (0x78eebf0e6e0) Data frame received for 3
+I0529 14:00:25.850065   34764 log.go:244] (0x78eec6ce640) (3) Data frame handling
+I0529 14:00:25.850071   34764 log.go:244] (0x78eec6ce640) (3) Data frame sent
+I0529 14:00:25.850273   34764 log.go:244] (0x78eec6ce640) (3) Writing data frame
+I0529 14:00:25.851300   34764 log.go:244] (0x78eebf0e6e0) Data frame received for 3
+I0529 14:00:25.851308   34764 log.go:244] (0x78eec6ce640) (3) Data frame handling
+I0529 14:00:25.851314   34764 log.go:244] (0x78eebf0e6e0) (0x78eec6ce640) Stream removed, broadcasting: 3
+I0529 14:00:25.851319   34764 log.go:244] (0x78eebf0e6e0) Data frame received for 1
+I0529 14:00:25.851324   34764 log.go:244] (0x78eebf0e6e0) (0x78eec6ce640) Stream removed, broadcasting: 3
+I0529 14:00:25.851330   34764 log.go:244] (0x78eebe78a00) (1) Data frame handling
+I0529 14:00:25.851336   34764 log.go:244] (0x78eebf0e6e0) (0x78eebe78a00) Stream removed, broadcasting: 1
+Handling connection for 18002
+I0529 14:00:25.858371   34764 log.go:244] (0x78eebf0e6e0) (0x78eec076140) Create stream
+I0529 14:00:25.858382   34764 log.go:244] (0x78eebf0e6e0) (0x78eec076140) Stream added, broadcasting: 5
+I0529 14:00:25.859212   34764 log.go:244] (0x78eebf0e6e0) Reply frame received for 5
+I0529 14:00:25.859226   34764 log.go:244] (0x78eec076140) (5) Writing data frame
+I0529 14:00:25.859257   34764 log.go:244] (0x78eebf0e6e0) (0x78eec0761e0) Create stream
+I0529 14:00:25.859264   34764 log.go:244] (0x78eebf0e6e0) (0x78eec0761e0) Stream added, broadcasting: 7
+I0529 14:00:25.859862   34764 log.go:244] (0x78eebf0e6e0) Reply frame received for 7
+I0529 14:00:25.859895   34764 log.go:244] (0x78eec0761e0) (7) Writing data frame
+I0529 14:00:25.863992   34764 log.go:244] (0x78eebf0e6e0) Data frame received for 7
+I0529 14:00:25.864004   34764 log.go:244] (0x78eec0761e0) (7) Data frame handling
+I0529 14:00:25.864011   34764 log.go:244] (0x78eec0761e0) (7) Data frame sent
+I0529 14:00:25.864238   34764 log.go:244] (0x78eec0761e0) (7) Writing data frame

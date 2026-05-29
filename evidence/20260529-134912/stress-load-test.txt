@@ -1,0 +1,18 @@
+[INFO] 159571 commentaires chargés depuis /Users/mac/TP_orchestration/data/comments.csv
+[TEST] case=text  rate=150 req/min  duration=300s
+[TEST] URL : http://127.0.0.1:18080/predict
+[TEST] Début : 14:00:28
+
+=======================================================
+  RÉSULTATS  -  TEXT / STRESS
+=======================================================
+  Rate configuré    : 150 req/min
+  Durée             : 300s
+  Requêtes envoyées : 744
+  Succès (HTTP 200) : 744
+  Échecs            : 0
+  Taux de succès    : 100.0%
+  Latence moyenne   : 0.042s
+  Latence P95       : 0.061s
+  Latence max       : 0.175s
+=======================================================

@@ -1,0 +1,4 @@
+NAME                             READY   STATUS    RESTARTS   AGE
+inference-5d8c5bf886-s6zkt       1/1     Running   0          24m
+monitoring-86d4d45d8d-9n4xf      1/1     Running   0          24m
+preprocessing-8459c9f5ff-2mfcw   1/1     Running   0          24m

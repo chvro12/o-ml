@@ -1,0 +1,55 @@
+Fri May 29 11:55:21 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       8m           253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   10m          94Mi            
+Fri May 29 11:55:51 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       6m           253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   8m           96Mi            
+Fri May 29 11:56:21 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       6m           253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   8m           96Mi            
+Fri May 29 11:56:51 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       10m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   22m          98Mi            
+Fri May 29 11:57:21 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       10m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   22m          98Mi            
+Fri May 29 11:57:51 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       12m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   22m          102Mi           
+Fri May 29 11:58:21 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       12m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   22m          102Mi           
+Fri May 29 11:58:52 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       10m          253Mi           
+monitoring-86d4d45d8d-9n4xf      5m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   24m          107Mi           
+Fri May 29 11:59:22 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       10m          253Mi           
+monitoring-86d4d45d8d-9n4xf      5m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   24m          107Mi           
+Fri May 29 11:59:52 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       11m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   24m          119Mi           
+Fri May 29 12:00:22 UTC 2026
+NAME                             CPU(cores)   MEMORY(bytes)   
+inference-5d8c5bf886-s6zkt       11m          253Mi           
+monitoring-86d4d45d8d-9n4xf      4m           45Mi            
+preprocessing-8459c9f5ff-2mfcw   24m          119Mi           

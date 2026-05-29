@@ -3,11 +3,14 @@
 ## Protocole
 
 ```bash
-URL="$(minikube service inference-svc -n projet-pst --url)/predict"
-python scripts/load_test.py --case text --level nominal --url "$URL"
-python scripts/load_test.py --case text --level charge --url "$URL"
-python scripts/load_test.py --case text --level stress --url "$URL"
+kubectl port-forward svc/inference-svc -n projet-pst 18080:8000
+URL="http://127.0.0.1:18080/predict"
+./scripts/run_challenge.sh "$URL"
 ```
+
+Sur macOS avec le driver Docker de Minikube, le tunnel `minikube service --url`
+reste attache au terminal. Le `port-forward` Kubernetes a donc ete utilise pour
+obtenir une URL stable pendant les mesures.
 
 Pendant `charge` et `stress`, `scripts/run_challenge.sh "$URL"` enregistre les
 sorties de charge, les metriques du monitoring, les predictions et
@@ -18,9 +21,26 @@ sorties de charge, les metriques du monitoring, les predictions et
 
 | Niveau | Rate req/min | Requetes | HTTP 200 | Succes | Latence moyenne | P95 | Restarts | Preuve |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Nominal | 10 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/nominal-*` |
-| Charge | 50 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/charge-*` |
-| Stress | 150 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | `evidence/*/stress-*` |
+| Nominal | 10 | 50 | 50 | 100.0 % | 0.059 s | 0.082 s | 0 | `evidence/20260529-134912/nominal-*` |
+| Charge | 50 | 250 | 250 | 100.0 % | 0.051 s | 0.078 s | 0 | `evidence/20260529-134912/charge-*` |
+| Stress | 150 | 744 | 744 | 100.0 % | 0.042 s | 0.061 s | 0 | `evidence/20260529-134912/stress-*` |
+
+Etat du quota pendant le test :
+
+```text
+limits.cpu       2200m   / 3
+limits.memory    1376Mi  / 2Gi
+requests.cpu     1100m   / 3
+requests.memory  736Mi   / 2Gi
+```
+
+Consommation observee en fin de stress :
+
+| Service | CPU | Memoire |
+| --- | ---: | ---: |
+| inference | 14m | 253Mi |
+| monitoring | 6m | 45Mi |
+| preprocessing | 51m | 131Mi |
 
 ## Correction avant et apres
 
@@ -31,7 +51,13 @@ hypothese a mesurer est le nombre de workers ou la taille du vocabulaire TF-IDF.
 
 | Test relance | Configuration avant | P95 avant | Configuration apres | P95 apres | Succes apres | Conclusion |
 | --- | --- | ---: | --- | ---: | ---: | --- |
-| Niveau problematique | A mesurer | A mesurer | A definir | A mesurer | A mesurer | A rediger |
+| Non applicable | Deploiement Kubernetes initial sous quota cas 2 | 0.061 s | Aucune correction corrective | 0.061 s | 100.0 % | Aucun niveau problematique observe : le stress reste sous 500 ms, sans erreur ni restart. |
+
+Conclusion : aucune correction corrective n'a ete appliquee apres les mesures,
+car le systeme respecte deja la contrainte metier du cas 2 au niveau stress
+impose. La decision la plus importante pour tenir le quota a ete faite en amont :
+garder un modele TF-IDF + regression logistique, plus leger qu'un modele type
+DistilBERT.
 
 ## Stress extreme optionnel
 
@@ -43,9 +69,9 @@ python scripts/load_test.py --case text --level extreme --rate 500 --url "$URL"
 
 | Rate req/min | Requetes | HTTP 200 | Succes | Latence moyenne | P95 | Restarts |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 200 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer |
-| 300 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer |
-| 500 | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer | A mesurer |
+| 200 | Non lance | Non lance | Non lance | Non lance | Non lance | Non lance |
+| 300 | Non lance | Non lance | Non lance | Non lance | Non lance | Non lance |
+| 500 | Non lance | Non lance | Non lance | Non lance | Non lance | Non lance |
 
 Le point de rupture est le premier palier sous `80 %` de succes. La preuve
 attendue est une sortie de `kubectl describe pod` ou `kubectl logs`, suivie
